@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 00:31:54 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/14 02:53:28 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/14 03:16:50 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,5 @@ int main(void)
 	printf("%d\n", ft_printf_p((uintptr_t)ptrn2, "0123456789abcdef"));
 	printf("%d\n", ft_printf_p((unsigned long)ptrn2, "0123456789abcdef"));
 	printf("%d\n", ft_printf_p((long)ptrn2, "0123456789abcdef"));
-
+test1;
 }
