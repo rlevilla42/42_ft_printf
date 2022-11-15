@@ -6,17 +6,17 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 00:31:54 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/14 23:23:44 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:43:13 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libftprintf.h"
+#include "libftprintf.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdint.h>
-
+/*
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -55,8 +55,8 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
-
-int	ft_itoa_base(unsigned long long n, char *base)
+*/
+int	ft_itoa_base_p(unsigned long long n, char *base)
 {
 	int		i;
 	int		len;
@@ -79,8 +79,7 @@ int	ft_itoa_base(unsigned long long n, char *base)
 		str[i--] = base[n % 16];
 		n /= 16;
 	}
-	ft_putstr(str);
-	len = ft_strlen(str);
+	len = ft_putstr(str);
 	free(str);
 	return (len + 2);
 }
@@ -89,10 +88,9 @@ int	ft_printf_p(unsigned long long int n, char *base)
 {
 	write(1, "0", 1);
 	write(1, "X", 1);
-	return (ft_itoa_base(n, base));
-
+	return (ft_itoa_base_p(n, base));
 }
-
+/*
 int main(void)
 {
 	//unsigned int	n = 4294967295;
@@ -105,7 +103,6 @@ int main(void)
 	long	*ptrn2 = &n2;
 	printf("printf output this: %p\n", (void *)&n);
 	printf("%d\n", ft_printf_p((uintptr_t)(void *)&n, "0123456789abcdef"));
-	printf("%d\n\n", ft_printf_p((unsigned long int)(void *)&n, "0123456789abcdef"));
 	printf("printf output this: %p\n", ptr);
 	printf("%d\n", ft_printf_p((uintptr_t)ptr, "0123456789abcdef"));
 	printf("%d\n\n", ft_printf_p((unsigned long)ptr, "0123456789abcdef"));
@@ -120,4 +117,4 @@ int main(void)
 	printf("%d\n", ft_printf_p((uintptr_t)ptrn2, "0123456789abcdef"));
 	printf("%d\n", ft_printf_p((unsigned long)ptrn2, "0123456789abcdef"));
 	printf("%d\n", ft_printf_p((long)ptrn2, "0123456789abcdef"));
-}
+}*/

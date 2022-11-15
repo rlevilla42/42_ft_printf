@@ -6,16 +6,16 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:16:08 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/13 00:05:13 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:37:49 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "liftftprintf.h"
+#include "libtftprintf.h"
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-
+/*
 int	ft_intsize(int n)
 {
 	int		count;
@@ -37,18 +37,8 @@ int	ft_intsize(int n)
 	}
 	return (count);
 }
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int	ft_putstr(char *str)
+*/
+int	ft_putstr_free(char *str)
 {
 	int	i;
 	int	count;
@@ -65,7 +55,7 @@ int	ft_putstr(char *str)
 	return (count);
 }
 
-int	ft_itoa(int n)
+int	ft_itoa_int(int n)
 {
 	char	*str;
 	int		i;
@@ -89,12 +79,12 @@ int	ft_itoa(int n)
 		str[i--] = (num % 10) + 48;
 		num /= 10;
 	}
-	return (ft_putstr(str));
+	return (ft_putstr_free(str));
 }
 
 int	ft_printf_int(int n)
 {
-	return (ft_itoa(n));
+	return (ft_itoa_int(n));
 }
 /*
 int main(void)

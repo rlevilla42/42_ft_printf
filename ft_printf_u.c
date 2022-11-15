@@ -6,41 +6,17 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:54:43 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/13 04:21:00 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:39:11 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "liftftprintf.h"
+#include "libtftprintf.h"
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-}
-
-int	ft_intsize(unsigned int n)
+int	ft_intlen(unsigned int n)
 {
 	int		count;
 
@@ -55,14 +31,14 @@ int	ft_intsize(unsigned int n)
 	return (count);
 }
 
-int	ft_itoa(unsigned int n)
+int	ft_itoa_u(unsigned int n)
 {
 	char	*str;
 	int		i;
 	int		count;
 
-	str = (char *)malloc(sizeof(char) * ft_intsize(n) + 1);
-	i = ft_intsize(n);
+	str = (char *)malloc(sizeof(char) * ft_intlen(n) + 1);
+	i = ft_intlen(n);
 	count = 0;
 	if (str == NULL)
 		return (0);
@@ -76,15 +52,14 @@ int	ft_itoa(unsigned int n)
 		str[i--] = (n % 10) + 48;
 		n /= 10;
 	}
-	ft_putstr(str);
-	count = ft_strlen(str);
+	count = ft_putstr(str);
 	free(str);
 	return (count);
 }
 
 int	ft_printf_u(unsigned int n)
 {
-	return (ft_itoa(n));
+	return (ft_itoa_u(n));
 }
 /*
 int	main(void)

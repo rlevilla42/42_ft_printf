@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 00:21:29 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/13 15:02:51 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:40:33 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+/*
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -54,8 +54,8 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
-
-int	ft_itoa_base(unsigned long long n, char *base)
+*/
+int	ft_itoa_base_x(unsigned long long n, char *base)
 {
 	int		i;
 	int		len;
@@ -78,15 +78,14 @@ int	ft_itoa_base(unsigned long long n, char *base)
 		str[i--] = base[n % 16];
 		n /= 16;
 	}
-	ft_putstr(str);
-	len = ft_strlen(str);
+	len = ft_putstr(str);
 	free(str);
 	return (len);
 }
 
 int	ft_printf_x(unsigned long long n, char *base)
 {
-	return (ft_itoa_base(n, base));
+	return (ft_itoa_base_x(n, base));
 }
 /*
 int main(void)

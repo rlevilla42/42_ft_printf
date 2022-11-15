@@ -6,16 +6,16 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:48:20 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/13 15:11:28 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:40:55 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libftprintf.h"
+#include "libftprintf.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+/*
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -54,7 +54,7 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
-
+*/
 int	ft_itoa_base(unsigned long long n, char *base)
 {
 	int		i;
@@ -84,7 +84,7 @@ int	ft_itoa_base(unsigned long long n, char *base)
 	return (len);
 }
 
-int	ft_printf_x(unsigned long long n, char *base)
+int	ft_printf_majx(unsigned long long n, char *base)
 {
 	return (ft_itoa_base(n, base));
 }
