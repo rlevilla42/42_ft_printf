@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 00:11:20 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/15 18:44:13 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/15 22:24:04 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdarg.h>
 # include <stdlib.h>
 
+int	ft_strlen(char *str);
+int	ft_putstr(char *str);
+int	ft_intsize(int n);
+int	ft_hexasize(unsigned long long n);
 int	ft_printf_char(char c);
 int	ft_printf_s(char *str);
 int	ft_printf_int(int n);
