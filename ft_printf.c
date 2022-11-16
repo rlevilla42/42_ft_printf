@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:23:33 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/16 16:30:42 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:01:51 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -37,7 +37,7 @@ int	printf_conv(const char *format, int i, va_list args)
 	else if (format [i + 1] == 'X')
 		return (ft_printf_majx(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (format[i + 1] == 'p')
-		return (ft_printf_p((unsigned long)va_arg(args, void *), base));
+		return (ft_printf_p((unsigned long long)va_arg(args, void *), base));
 	else
 		return (0);
 }
@@ -64,6 +64,7 @@ int	ft_printf(const char *format, ...)
 			count++;
 		}
 	}
+	va_end(args);
 	return (count);
 }
 /*
@@ -85,4 +86,10 @@ int main(void)
 	et p = %p\n\n", c, str, n, n1, x, X, p));
 	//printf("\n%d\n", printf("V1:\ts = %s\n", str));
 	//printf("\n%d\n", ft_printf("V2:\ts = %s\n", str));
+}*/
+/*
+int main(void)
+{
+	 printf("%d", printf("%s\n", (char *)NULL));
+	printf("%d", ft_printf("%s\n", (char *)NULL));
 }*/

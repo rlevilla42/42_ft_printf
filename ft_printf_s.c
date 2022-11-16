@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 00:40:36 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/16 16:34:22 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:01:32 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ int	ft_printf_s(char *str)
 
 	i = 0;
 	count = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		count += ft_strlen("(null)");
+		return (count);
+	}
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);

@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 00:31:54 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/16 16:34:10 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:37:56 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	ft_itoa_base_p(unsigned long long n, char *base)
 int	ft_printf_p(unsigned long long int n, char *base)
 {
 	write(1, "0", 1);
-	write(1, "X", 1);
+	write(1, "x", 1);
 	return (ft_itoa_base_p(n, base));
 }
 /*
