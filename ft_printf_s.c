@@ -6,11 +6,11 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 00:40:36 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/15 22:54:08 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:34:22 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -29,6 +29,5 @@ int	ft_printf_s(char *str)
 		i++;
 	}
 	count = ft_strlen(str);
-	//free(str);
 	return (count);
 }

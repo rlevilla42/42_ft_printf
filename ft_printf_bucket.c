@@ -6,15 +6,16 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:21:52 by rlevilla          #+#    #+#             */
-/*   Updated: 2022/11/15 18:41:24 by rlevilla         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:31:24 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libftprintf.h"
+#include "ft_printf.h"
+#include <unistd.h>
 
 int	ft_strlen(char *str)
 {
 	int	i;
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
